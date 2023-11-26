@@ -1,0 +1,141 @@
+2023-08-30 00:14:04,918 INFO: 
+                ____                _       _____  ____
+               / __ ) ____ _ _____ (_)_____/ ___/ / __ \
+              / __  |/ __ `// ___// // ___/\__ \ / /_/ /
+             / /_/ // /_/ /(__  )/ // /__ ___/ // _, _/
+            /_____/ \__,_//____//_/ \___//____//_/ |_|
+     ______                   __   __                 __      __
+    / ____/____   ____   ____/ /  / /   __  __ _____ / /__   / /
+   / / __ / __ \ / __ \ / __  /  / /   / / / // ___// //_/  / /
+  / /_/ // /_/ // /_/ // /_/ /  / /___/ /_/ // /__ / /<    /_/
+  \____/ \____/ \____/ \____/  /_____/\____/ \___//_/|_|  (_)
+    
+Version Information: 
+	BasicSR: 1.2.0+HEAD
+	PyTorch: 1.8.1
+	TorchVision: 0.9.1
+2023-08-30 00:14:04,918 INFO: 
+  name: FPN_NAF-cpu-RealBlur_J-width64-8gpus
+  model_type: ImageRestorationModel
+  scale: 1
+  num_gpu: 0
+  manual_seed: 10
+  datasets:[
+    train:[
+      name: realblur_J-train
+      type: PairedImageDataset
+      dataroot_gt: ./datasets/RealBlur_J/train/sharp_crops.lmdb
+      dataroot_lq: ./datasets/RealBlur_J/train/blur_crops.lmdb
+      filename_tmpl: {}
+      io_backend:[
+        type: lmdb
+      ]
+      gt_size: 256
+      use_flip: True
+      use_rot: True
+      use_shuffle: True
+      num_worker_per_gpu: 8
+      batch_size_per_gpu: 8
+      dataset_enlarge_ratio: 1
+      prefetch_mode: None
+      phase: train
+      scale: 1
+    ]
+    val:[
+      name: realblur_J-test
+      type: PairedImageDataset
+      dataroot_gt: ./datasets/RealBlur_J/test/target.lmdb
+      dataroot_lq: ./datasets/RealBlur_J/test/input.lmdb
+      io_backend:[
+        type: lmdb
+      ]
+      phase: val
+      scale: 1
+    ]
+  ]
+  network_g:[
+    type: FPN_NAF_all_Local
+  ]
+  path:[
+    pretrain_network_g: None
+    strict_load_g: True
+    resume: False
+    resume_state: None
+    root: /root/deblur/NAFNet-main
+    experiments_root: /root/deblur/NAFNet-main/experiments/FPN_NAF-cpu-RealBlur_J-width64-8gpus
+    models: /root/deblur/NAFNet-main/experiments/FPN_NAF-cpu-RealBlur_J-width64-8gpus/models
+    training_states: /root/deblur/NAFNet-main/experiments/FPN_NAF-cpu-RealBlur_J-width64-8gpus/training_states
+    log: /root/deblur/NAFNet-main/experiments/FPN_NAF-cpu-RealBlur_J-width64-8gpus
+    visualization: /root/deblur/NAFNet-main/experiments/FPN_NAF-cpu-RealBlur_J-width64-8gpus/visualization
+  ]
+  train:[
+    optim_g:[
+      type: AdamW
+      lr: 0.0009
+      weight_decay: 0.001
+      betas: [0.9, 0.9]
+    ]
+    scheduler:[
+      type: TrueCosineAnnealingLR
+      T_max: 400000
+      eta_min: 1e-07
+    ]
+    total_iter: 400000
+    warmup_iter: -1
+    pixel_opt:[
+      type: SRN_loss
+      loss_weight: 1
+      reduction: mean
+    ]
+    wavelet_opt:[
+      use_loss: True
+    ]
+  ]
+  val:[
+    val_freq: 20000.0
+    save_img: False
+    factor: 16
+    metrics:[
+      psnr:[
+        type: calculate_psnr
+        crop_border: 0
+        test_y_channel: False
+      ]
+      ssim:[
+        type: calculate_ssim
+        crop_border: 0
+        test_y_channel: False
+      ]
+    ]
+  ]
+  logger:[
+    print_freq: 200
+    save_checkpoint_freq: 5000.0
+    use_tb_logger: True
+    wandb:[
+      project: BasicSR-RealBlur_J
+      resume_id: None
+    ]
+  ]
+  dist_params:[
+    backend: nccl
+    port: 29500
+  ]
+  is_train: True
+  dist: False
+  rank: 0
+  world_size: 1
+
+2023-08-30 00:14:14,535 INFO: Use wandb logger with id=gfc8vxkr; project=BasicSR-RealBlur_J.
+2023-08-30 00:14:14,580 INFO: Dataset PairedImageDataset - realblur_J-train is created.
+2023-08-30 00:14:14,580 INFO: Training statistics:
+	Number of train images: 15032
+	Dataset enlarge ratio: 1
+	Batch size per gpu: 8
+	World size (gpu number): 1
+	Require iter number per epoch: 1879
+	Total epochs: 213; iters: 400000.
+2023-08-30 00:14:14,583 INFO: Dataset PairedImageDataset - realblur_J-test is created.
+2023-08-30 00:14:14,584 INFO: Number of val images/folders in realblur_J-test: 980
+2023-08-30 00:15:13,777 INFO: Model [ImageRestorationModel] is created.
+2023-08-30 00:15:13,949 INFO: Start training from epoch: 0, iter: 0

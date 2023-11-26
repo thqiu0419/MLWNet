@@ -1,0 +1,12 @@
+future
+lmdb
+numpy
+opencv-python
+Pillow
+pyyaml
+requests
+scikit-image
+scipy
+tqdm
+yapf
+torch==1.8.0+cu111

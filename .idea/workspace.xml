@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Documents/WeChat Files/wxid_y2u6dtqaqo7822/FileStorage/File/2023-08/base_model.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/Documents/WeChat Files/wxid_y2u6dtqaqo7822/FileStorage/File/2023-08/fpn_arch.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/Documents/WeChat Files/wxid_y2u6dtqaqo7822/FileStorage/File/2023-08/image_restoration_model.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NGg2jziFr0dTYp05QGHo7obQj5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;Q:/MLWNet&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Q:\NAFNet-main\basicsr\utils" />
+      <recent name="Q:\NAFNet-main\options\train\RealBlur_R" />
+      <recent name="Q:\NAFNet-main\options\train\RealBlur_J" />
+      <recent name="Q:\NAFNet-main" />
+      <recent name="D:\NAFNet-main\datasets\RSBlur" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\NAFNet-main\basicsr" />
+      <recent name="D:\NAFNet-main\basicsr\models" />
+      <recent name="D:\NAFNet-main" />
+      <recent name="D:\NAFNet-main\experiments\pretrained_models" />
+      <recent name="D:\NAFNet-main\experiments" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.MLWNet_arch (1)">
+    <configuration name="MLWNet_arch (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NAFNet-main" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basicsr/models/archs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basicsr/models/archs/MLWNet_arch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MLWNet_arch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NAFNet-main" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basicsr/models/archs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="Q:\NAFNet-main\basicsr\models\archs\MLWNet_arch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="create_lmdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NAFNet-main" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basicsr/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basicsr/utils/create_lmdb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="del0729" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NAFNet-main" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/del0729.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="extract_RSBlur" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NAFNet-main" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datasets/RSBlur" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datasets/RSBlur/extract_RSBlur.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.MLWNet_arch (1)" />
+        <item itemvalue="Python.MLWNet_arch" />
+        <item itemvalue="Python.extract_RSBlur" />
+        <item itemvalue="Python.create_lmdb" />
+        <item itemvalue="Python.del0729" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="" />
+      <created>1679295627366</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679295627366</updated>
+      <workItem from="1679295628357" duration="7930000" />
+      <workItem from="1679310771235" duration="4049000" />
+      <workItem from="1679316701149" duration="620000" />
+      <workItem from="1679364833454" duration="753000" />
+      <workItem from="1679490370728" duration="1475000" />
+      <workItem from="1679555611811" duration="1125000" />
+      <workItem from="1679557661448" duration="70000" />
+      <workItem from="1679975690223" duration="2010000" />
+      <workItem from="1680052262527" duration="1215000" />
+      <workItem from="1680267867321" duration="2627000" />
+      <workItem from="1680351365675" duration="1742000" />
+      <workItem from="1680569678996" duration="4681000" />
+      <workItem from="1680578570940" duration="2584000" />
+      <workItem from="1680617988812" duration="1987000" />
+      <workItem from="1680832597345" duration="2397000" />
+      <workItem from="1680853496399" duration="4012000" />
+      <workItem from="1681080966835" duration="1932000" />
+      <workItem from="1681642517420" duration="13509000" />
+      <workItem from="1681694649645" duration="14623000" />
+      <workItem from="1681787031472" duration="49487000" />
+      <workItem from="1682128675589" duration="11496000" />
+      <workItem from="1682251341650" duration="26604000" />
+      <workItem from="1682557785168" duration="638000" />
+      <workItem from="1682581075385" duration="4638000" />
+      <workItem from="1682833675635" duration="15002000" />
+      <workItem from="1682923888935" duration="11444000" />
+      <workItem from="1683162795770" duration="31618000" />
+      <workItem from="1683510033849" duration="7024000" />
+      <workItem from="1683530898726" duration="13297000" />
+      <workItem from="1683635989035" duration="24864000" />
+      <workItem from="1683897624903" duration="762000" />
+      <workItem from="1683898889550" duration="45433000" />
+      <workItem from="1684242356911" duration="19621000" />
+      <workItem from="1684403777631" duration="16114000" />
+      <workItem from="1684736034606" duration="34412000" />
+      <workItem from="1685156377664" duration="30758000" />
+      <workItem from="1685344847155" duration="26299000" />
+      <workItem from="1686144741631" duration="986000" />
+      <workItem from="1686538773857" duration="589000" />
+      <workItem from="1686539472237" duration="7929000" />
+      <workItem from="1686887028693" duration="15000" />
+      <workItem from="1686887180443" duration="4798000" />
+      <workItem from="1687179497174" duration="938000" />
+      <workItem from="1687744193789" duration="96000" />
+      <workItem from="1688201822435" duration="3095000" />
+      <workItem from="1688267048669" duration="603000" />
+      <workItem from="1688291879221" duration="20725000" />
+      <workItem from="1688964989489" duration="1080000" />
+      <workItem from="1689081840596" duration="6980000" />
+      <workItem from="1689132578612" duration="36399000" />
+      <workItem from="1689482318004" duration="5843000" />
+      <workItem from="1689737712699" duration="12587000" />
+      <workItem from="1690017345573" duration="140000" />
+      <workItem from="1690030255545" duration="684000" />
+      <workItem from="1690054833982" duration="43770000" />
+      <workItem from="1690612672669" duration="4420000" />
+      <workItem from="1690702139114" duration="11388000" />
+      <workItem from="1690792970653" duration="2475000" />
+      <workItem from="1690812620689" duration="3220000" />
+      <workItem from="1690995393094" duration="8004000" />
+      <workItem from="1691083890869" duration="41804000" />
+      <workItem from="1691929749284" duration="25383000" />
+      <workItem from="1692550283329" duration="33329000" />
+      <workItem from="1693225013305" duration="26930000" />
+      <workItem from="1693624117699" duration="485000" />
+      <workItem from="1693661220897" duration="5648000" />
+      <workItem from="1693838826266" duration="511000" />
+      <workItem from="1693843178132" duration="45034000" />
+      <workItem from="1694416931640" duration="19573000" />
+      <workItem from="1694745721774" duration="21196000" />
+      <workItem from="1694930241978" duration="98810000" />
+      <workItem from="1695625409677" duration="15185000" />
+      <workItem from="1696409523363" duration="77238000" />
+      <workItem from="1697202643098" duration="42985000" />
+      <workItem from="1697695503445" duration="9999000" />
+      <workItem from="1697864530816" duration="23619000" />
+      <workItem from="1698291780527" duration="875000" />
+      <workItem from="1698302228859" duration="24544000" />
+      <workItem from="1698671799888" duration="288000" />
+      <workItem from="1698672101966" duration="14063000" />
+      <workItem from="1698892329018" duration="8606000" />
+      <workItem from="1698937950405" duration="71967000" />
+      <workItem from="1699842357484" duration="1803000" />
+      <workItem from="1699939302187" duration="4534000" />
+      <workItem from="1700047260847" duration="2367000" />
+      <workItem from="1700107125095" duration="5564000" />
+      <workItem from="1700200242282" duration="613000" />
+      <workItem from="1700204232586" duration="21534000" />
+      <workItem from="1700710782110" duration="4263000" />
+      <workItem from="1700721009380" duration="1524000" />
+      <workItem from="1701011314179" duration="2715000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NAFNet_main$restormer_arch.coverage" NAME="restormer_arch 覆盖结果" MODIFIED="1681872198613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$wavelet_block.coverage" NAME="wavelet_block 覆盖结果" MODIFIED="1683381951167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$fpn_arch.coverage" NAME="fpn_arch 覆盖结果" MODIFIED="1689762830019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$extract_RSBlur.coverage" NAME="extract_RSBlur 覆盖结果" MODIFIED="1700453568966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datasets/RSBlur" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$fpn0728_arch.coverage" NAME="fpn0728_arch 覆盖结果" MODIFIED="1701011619170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$fpn_naf_arch.coverage" NAME="fpn_naf_arch 覆盖结果" MODIFIED="1682302151525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$create_lmdb.coverage" NAME="create_lmdb 覆盖结果" MODIFIED="1695090940733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/utils" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$del0729.coverage" NAME="del0729 覆盖结果" MODIFIED="1690616574619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$generate_constant.coverage" NAME="generate_constant 覆盖结果" MODIFIED="1683899278693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts/data_preparation" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$wavelet_transform.coverage" NAME="wavelet_transform 覆盖结果" MODIFIED="1685013489704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />
+    <SUITE FILE_PATH="coverage/NAFNet_main$MLWNet_arch__1_.coverage" NAME="MLWNet_arch (1) 覆盖结果" MODIFIED="1701012371954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />
+  </component>
+</project>
