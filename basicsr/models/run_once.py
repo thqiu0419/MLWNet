@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# @Time    : 1/03/2023 9:14 pm
-# @Author  : 邱天衡
-# @FileName: run_once.py
-# @Software: PyCharm
-# @Blog    ：https://blog.csdn.net/Mr_Clutch
 import time
 
 import torch
