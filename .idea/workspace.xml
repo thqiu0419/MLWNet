@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicsr/utils/create_lmdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/utils/create_lmdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/train/RSBlur/MLWNet-B.yml" beforeDir="false" afterPath="$PROJECT_DIR$/options/train/RSBlur/MLWNet-B.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/data_preparation/RSBlur.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/data_preparation/RSBlur.py" afterDir="false" />
-    </list>
+    <list default="true" id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,12 +298,23 @@
       <workItem from="1700721009380" duration="1524000" />
       <workItem from="1701011314179" duration="2715000" />
       <workItem from="1701014125650" duration="2766000" />
-      <workItem from="1701054579007" duration="129000" />
+      <workItem from="1701054579007" duration="505000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NAFNet_main$restormer_arch.coverage" NAME="restormer_arch 覆盖结果" MODIFIED="1681872198613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />
