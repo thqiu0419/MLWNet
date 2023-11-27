@@ -20,8 +20,8 @@ def main():
     # opt['n_thread'] = 20
     # opt['compression_level'] = 3
     #
-    # opt['input_folder'] = './datasets/RSBlur-syn/train/input'
-    # opt['save_folder'] = './datasets/RSBlur-syn/train/blur_crops'
+    # opt['input_folder'] = './datasets/RSBlur/train/input'
+    # opt['save_folder'] = './datasets/RSBlur/train/blur_crops'
     # opt['crop_size'] = 512
     # opt['step'] = 256
     # opt['thresh_size'] = 0
@@ -29,8 +29,8 @@ def main():
     # opt['base_w'] = 1920
     # extract_subimages(opt)
     #
-    # opt['input_folder'] = './datasets/RSBlur-syn/train/target'
-    # opt['save_folder'] = './datasets/RSBlur-syn/train/sharp_crops'
+    # opt['input_folder'] = './datasets/RSBlur/train/target'
+    # opt['save_folder'] = './datasets/RSBlur/train/sharp_crops'
     # opt['crop_size'] = 512
     # opt['step'] = 256
     # opt['thresh_size'] = 0

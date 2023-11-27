@@ -35,7 +35,7 @@ datasets:
     prefetch_mode: ~
 
   val:
-    name: RSBlur-syn-test
+    name: RSBlur-test
     type: PairedImageDataset
     dataroot_gt: ./datasets/RSBlur/test/target.lmdb
     dataroot_lq: ./datasets/RSBlur/test/input.lmdb

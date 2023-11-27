@@ -146,14 +146,14 @@ def create_lmdb_for_RealBlurJ():
     make_lmdb_from_imgs(folder_path, lmdb_path, img_path_list, keys)
 
 def create_lmdb_for_RSBlur():
-    folder_path = './datasets/RSBlur-syn/train/blur_crops'
-    lmdb_path = './datasets/RSBlur-syn/train/blur_crops.lmdb'
+    folder_path = './datasets/RSBlur/train/blur_crops'
+    lmdb_path = './datasets/RSBlur/train/blur_crops.lmdb'
 
     img_path_list, keys = prepare_keys(folder_path, 'png')
     make_lmdb_from_imgs(folder_path, lmdb_path, img_path_list, keys)
 
-    folder_path = './datasets/RSBlur-syn/train/sharp_crops'
-    lmdb_path = './datasets/RSBlur-syn/train/sharp_crops.lmdb'
+    folder_path = './datasets/RSBlur/train/sharp_crops'
+    lmdb_path = './datasets/RSBlur/train/sharp_crops.lmdb'
 
     img_path_list, keys = prepare_keys(folder_path, 'png')
     make_lmdb_from_imgs(folder_path, lmdb_path, img_path_list, keys)
