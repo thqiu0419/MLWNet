@@ -3,7 +3,7 @@
 ### News
 **2024.02.28** Our Paper is accepted by **CVPR2024**.
 
-<img src="figures/metrics.png" alt="PSNR_vs_MACs" style="zoom:50%;" />
+![PSNR_vs_MACs](figures/metrics.png)
 
 ## Easy Start
 

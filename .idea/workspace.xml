@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/train/RealBlur_J/MLWNet-S.yml" beforeDir="false" afterPath="$PROJECT_DIR$/options/train/RealBlur_J/MLWNet-S.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/train/RealBlur_R/MLWNet-S.yml" beforeDir="false" afterPath="$PROJECT_DIR$/options/train/RealBlur_R/MLWNet-S.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +296,7 @@
       <workItem from="1701011314179" duration="2715000" />
       <workItem from="1701014125650" duration="2766000" />
       <workItem from="1701054579007" duration="505000" />
-      <workItem from="1710335665484" duration="11474000" />
+      <workItem from="1710335665484" duration="11758000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1710346872881</created>
@@ -308,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710346872881</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1710348007658</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710348007658</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
