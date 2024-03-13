@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MLWNet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MLWNet.iml" afterDir="false" />
+    <list default="true" id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicsr/metrics/psnr_ssim.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/metrics/psnr_ssim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicsr/models/archs/MLWNet_arch.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/models/archs/MLWNet_arch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicsr/models/archs/wavelet_block.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/models/archs/wavelet_block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicsr/utils/create_lmdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/utils/create_lmdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basicsr/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/version.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluate_realblur.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluate_realblur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/train/RealBlur_J/MLWNet-S.yml" beforeDir="false" afterPath="$PROJECT_DIR$/options/train/RealBlur_J/MLWNet-S.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/train/RealBlur_R/MLWNet-S.yml" beforeDir="false" afterPath="$PROJECT_DIR$/options/train/RealBlur_R/MLWNet-S.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/train.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +51,7 @@
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "last_opened_file_path": "Q:/MLWNet_paper/MLWNet",
+    "last_opened_file_path": "Q:/MLWNet_paper/MLWNet/figures",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,11 +63,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Q:\MLWNet_paper\MLWNet\figures" />
       <recent name="Q:\MLWNet_paper\MLWNet" />
       <recent name="Q:\NAFNet-main\basicsr\utils" />
       <recent name="Q:\NAFNet-main\options\train\RealBlur_R" />
       <recent name="Q:\NAFNet-main\options\train\RealBlur_J" />
-      <recent name="Q:\NAFNet-main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\NAFNet-main\basicsr" />
@@ -309,8 +299,16 @@
       <workItem from="1701011314179" duration="2715000" />
       <workItem from="1701014125650" duration="2766000" />
       <workItem from="1701054579007" duration="505000" />
-      <workItem from="1710335665484" duration="10598000" />
+      <workItem from="1710335665484" duration="11474000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1710346872881</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710346872881</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +324,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NAFNet_main$restormer_arch.coverage" NAME="restormer_arch 覆盖结果" MODIFIED="1681872198613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/basicsr/models/archs" />

@@ -6,10 +6,10 @@
 # ------------------------------------------------------------------------
 # general settings
 # 0507
-name: MLWNet-fft5-RealBlur_J-width32-4gpus
+name: MLWNet-fft5-RealBlur_J-width32-8gpus
 model_type: ImageRestorationModel
 scale: 1
-num_gpu: 4
+num_gpu: 8
 manual_seed: 10
 
 datasets:

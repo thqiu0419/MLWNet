@@ -6,10 +6,10 @@
 # ------------------------------------------------------------------------
 # general settings
 # 0507
-name: MLWNet-384-RealBlur_R-width32-8gpus
+name: MLWNet-RealBlur_R-width32-8gpus
 model_type: ImageRestorationModel
 scale: 1
-num_gpu: 4
+num_gpu: 8
 manual_seed: 10
 
 datasets:
@@ -23,14 +23,14 @@ datasets:
     io_backend:
       type: lmdb
 
-    gt_size: 384
+    gt_size: 256
     use_flip: true
     use_rot: true
 
     # data loader
     use_shuffle: true
     num_worker_per_gpu: 8
-    batch_size_per_gpu: 4
+    batch_size_per_gpu: 8
     dataset_enlarge_ratio: 1
     prefetch_mode: ~
 
@@ -49,25 +49,25 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: /home/qtianheng/MLWNet/experiments/MLWNet-RealBlur_R-width32-8gpus/models/net_g_280000.pth
+  pretrain_network_g: ~
   strict_load_g: true
-  resume: true
+  resume: false
   resume_state: ~
 
 # training settings
 train:
   optim_g:
     type: AdamW
-    lr: !!float 4e-4
+    lr: !!float 9e-4
     weight_decay: !!float 1e-3
     betas: [0.9, 0.9]
 
   scheduler:
     type: TrueCosineAnnealingLR
-    T_max: 200000
+    T_max: 400000
     eta_min: !!float 1e-7
 
-  total_iter: 200000
+  total_iter: 400000
   warmup_iter: -1 # no warm up
 
   # losses
