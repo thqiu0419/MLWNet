@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# @Time    : 18/01/2023 4:28 am
+# @Author  : Tianheng Qiu
+# @FileName: waveelt_block.py
+# @Software: PyCharm
+
 import torch
 from torch import nn
 import pywt
@@ -7,6 +14,7 @@ import torch.nn.functional as F
 """
 modified from ptwt, and also used pywt as a base
 v1.0, 20230409
+by thqiu
 """
 
 
@@ -407,6 +415,126 @@ class IDWT(nn.Module):
             if padr > 0:
                 l_component = l_component[..., :-padr]
         return l_component
+
+
+
+class BasicConv(nn.Module):
+    def __init__(self, in_channel, out_channel, kernel_size, stride, bias=False, norm=False, relu=True, transpose=False,
+                 channel_shuffle_g=0, norm_method=nn.BatchNorm2d, groups=1):
+        super(BasicConv, self).__init__()
+        self.channel_shuffle_g = channel_shuffle_g
+        self.norm = norm
+        if bias and norm:
+            bias = False
+
+        padding = kernel_size // 2
+        layers = list()
+        if transpose:
+            padding = kernel_size // 2 - 1
+            layers.append(
+                nn.ConvTranspose2d(in_channel, out_channel, kernel_size, padding=padding, stride=stride, bias=bias,
+                                   groups=groups))
+        else:
+            layers.append(
+                nn.Conv2d(in_channel, out_channel, kernel_size, padding=padding, stride=stride, bias=bias,
+                          groups=groups))
+        if norm:
+            layers.append(norm_method(out_channel))
+        elif relu:
+            layers.append(nn.ReLU(inplace=True))
+
+        self.main = nn.Sequential(*layers)
+
+    def forward(self, x):
+        return self.main(x)
+
+
+class FFTBlock(nn.Module):
+    def __init__(self, n_feat, norm='backward'):  # 'ortho'
+        super(FFTBlock, self).__init__()
+        self.main = nn.Sequential(
+            BasicConv(n_feat, n_feat, kernel_size=3, stride=1, relu=True),
+            BasicConv(n_feat, n_feat, kernel_size=3, stride=1, relu=False)
+        )
+        self.main_fft = nn.Sequential(
+            BasicConv(n_feat * 2, n_feat * 2, kernel_size=1, stride=1, relu=True),
+            BasicConv(n_feat * 2, n_feat * 2, kernel_size=1, stride=1, relu=False)
+        )
+        self.dim = n_feat
+        self.norm = norm
+
+    def forward(self, x):
+        _, _, H, W = x.shape
+        dim = 1
+        y = torch.fft.rfft2(x, norm=self.norm)
+        y_imag = y.imag
+        y_real = y.real
+        y_f = torch.cat([y_real, y_imag], dim=dim)
+        y = self.main_fft(y_f)
+        y_real, y_imag = torch.chunk(y, 2, dim=dim)
+        y = torch.complex(y_real, y_imag)
+        y = torch.fft.irfft2(y, s=(H, W), norm=self.norm)
+        return self.main(x) + x + y
+
+
+class FFT3(nn.Module):
+    def __init__(self, dim):
+        super(FFT3, self).__init__()
+        self.dim = dim
+
+        self.conv_in = nn.Conv2d(dim, dim*4, kernel_size=1)
+
+        self.conv2 = nn.Conv2d(dim*4, dim*4, 7, padding=3, groups=dim*4)  # dw
+        self.act = nn.GELU()
+        self.fft_act = nn.GELU()
+        self.conv3 = nn.Conv2d(dim*4, dim, 1)
+        self.fft = nn.Parameter(torch.ones((self.dim * 4, 1, 1, 8, 8 // 2 + 1)))
+    def forward(self, x):
+        _, _, H, W = x.shape
+        x = self.conv_in(x)
+        x_patch = rearrange(x, 'b c (h patch1) (w patch2) -> b c h w patch1 patch2', patch1=8, patch2=8)
+        x_patch_fft = torch.fft.rfft2(x_patch.float(), norm='backward')
+        y = torch.cat([x_patch_fft.real, x_patch_fft.imag], dim=1)
+        y = self.fft_act(y)
+        y_real, y_imag = torch.chunk(y, 2, dim=1)
+        y = torch.complex(y_real, y_imag)
+
+        x_patch_fft = x_patch_fft * self.fft
+        x_patch = torch.fft.irfft2(x_patch_fft, s=(8, 8), norm='backward')
+        x = rearrange(x_patch, 'b c h w patch1 patch2 -> b c (h patch1) (w patch2)', patch1=8, patch2=8)
+        x = self.conv2(x)
+        x = self.act(x)
+        x = self.conv3(x)
+        return x
+
+class FFT2(nn.Module):
+    def __init__(self, dim):
+        super(FFT2, self).__init__()
+        self.dim = dim
+        self.conv_in = nn.Conv2d(dim, dim*2, kernel_size=1)
+        self.conv2 = nn.Conv2d(dim*2, dim*2, 7, padding=3, groups=dim*2)  # dw
+        self.act = nn.GELU()
+        self.fft_act = nn.GELU()
+        self.conv3 = nn.Conv2d(dim*2, dim, 1)
+        self.fft1 = nn.Parameter(torch.ones((self.dim * 2, 1, 1, 8, 8 // 2 + 1)))
+        self.fft2 = nn.Parameter(torch.ones((self.dim * 2, 1, 1, 8, 8 // 2 + 1)))
+    def forward(self, x):
+        _, _, H, W = x.shape
+        x = self.conv_in(x)
+        x_patch = rearrange(x, 'b c (h patch1) (w patch2) -> b c h w patch1 patch2', patch1=8, patch2=8)
+        x_patch_fft = torch.fft.rfft2(x_patch.float(), norm='backward')
+        x_patch_fft = x_patch_fft * self.fft1
+        y = torch.cat([x_patch_fft.real, x_patch_fft.imag], dim=1)
+        y = self.fft_act(y)
+        y_real, y_imag = torch.chunk(y, 2, dim=1)
+        y = torch.complex(y_real, y_imag)
+        x_patch_fft = y * self.fft2
+        x_patch = torch.fft.irfft2(x_patch_fft, s=(8, 8), norm='backward')
+        x = rearrange(x_patch, 'b c h w patch1 patch2 -> b c (h patch1) (w patch2)', patch1=8, patch2=8)
+        x = self.conv2(x)
+        x = self.act(x)
+        x = self.conv3(x)
+        return x
 
 
 

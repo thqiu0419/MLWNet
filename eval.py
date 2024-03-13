@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# @Time    : 18/01/2023 2:15 pm
+# @Author  : Tianheng Qiu
+# @FileName: test.py
+# @Software: PyCharm
+
 import argparse
 import logging
 import os
@@ -13,12 +20,11 @@ from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 from skimage import img_as_ubyte
 
-from basicsr.utils.img_util import PSNR, SSIM, tensor2img
-from losses import CharbonnierLoss
+from basicsr.data.data_util import paired_paths_from_lmdb
+from basicsr.models.archs.MLWNet_arch import MLWNet_Local
+from basicsr.metrics.psnr_ssim import PSNR, SSIM
 import torch.nn.functional as F
-from models.ours.fpn0728_arch import FPN_NAF_all_Local, FPN_NAF_all
 import lmdb
-from dataset_utils import paired_paths_from_lmdb
 
 
 def is_image_file(filename):
@@ -219,7 +225,9 @@ def test_model(model, data, use_gpu=True, visible=True, bn=1, dataset_name='real
                 # print("11111111111111111111111")
                 cv2.imwrite(f'./test_dir/blur_{dataset_name}/{name[0]}',
                             cv2.cvtColor(img_as_ubyte(in_img), cv2.COLOR_RGB2BGR))
-                cv2.imwrite(f'./test_dir/pred_{dataset_name}/{name[0]}', cv2.cvtColor(img_as_ubyte(out_img), cv2.COLOR_RGB2BGR))
+                cv2.imwrite(f'./test_dir/pred_{dataset_name}/{name[0]}',
+                            cv2.cvtColor(img_as_ubyte(out_img), cv2.COLOR_RGB2BGR))
+                # cv2.imwrite(f'./test_dir/pred_{dataset_name}/{name[0]}', cv2.cvtColor(img_as_ubyte(out_img), cv2.COLOR_RGB2BGR))
 
                 # in_imgs = torch.clamp(img256,0,1).cpu().detach().permute(0, 2, 3, 1).squeeze(0).numpy()
                 # enum batch
@@ -254,13 +262,26 @@ def check_and_create_dir(path):
 
 
 def load_checkpoint(model, checkpoint_PATH, device, param_key='params'):
-    model_CKPT = torch.load(checkpoint_PATH, map_location=lambda storage, loc: storage)
-    model_CKPT = model_CKPT['params']
-    # model_CKPT = model_CKPT["state_dict"]
-    for k, v in model_CKPT.copy().items():
-        if 'module' in k:
-            model_CKPT[k.replace('module.', '')] = model_CKPT[k]
-            del model_CKPT[k]
+    CKPT = torch.load(checkpoint_PATH, map_location=lambda storage, loc: storage)
+    model_CKPT = CKPT['params']
+    # # model_CKPT = model_CKPT["state_dict"]
+    # for k, v in model_CKPT.copy().items():
+    #     print(k)
+    #     if 'module' in k:
+    #         model_CKPT[k.replace('module.', '')] = model_CKPT[k]
+    #         del model_CKPT[k]
+    #     if 'backbone' in k:
+    #         model_CKPT[k.replace('backbone', 'encoder')] = model_CKPT[k]
+    #         del model_CKPT[k]
+    #     if 'neck' in k:
+    #         model_CKPT[k.replace('neck', 'fusion')] = model_CKPT[k]
+    #         del model_CKPT[k]
+    #     if 'head' in k:
+    #         model_CKPT[k.replace('head.', 'decoder.')] = model_CKPT[k]
+    #         del model_CKPT[k]
+    # CKPT['params'] = model_CKPT
+    # torch.save(CKPT, '55000_new.pth')
+
     model.load_state_dict(model_CKPT, strict=True)
     print(f'loading checkpoint from {checkpoint_PATH}!')
 
@@ -289,13 +310,8 @@ def pre_val(opt):
     dir_path = opt.dir
     test_data = load_test(dir_path, batch_size=BATCH_SIZE)
     best_loss = 1E6
-    criterion = CharbonnierLoss()
-    # exec("m = {}(num_classes={})". format(opt.cfg, len(cls)), globals())
-    # model = globals()['m']
-    # 384 * 1.2
-    # 256 * 1.7
     base_size = int(256 * 1.5)
-    model = FPN_NAF_all_Local(dim=32, base_size=base_size)  # realblur-J1.9最佳
+    model = MLWNet_Local(dim=64, base_size=base_size)  # realblur-J1.9最佳
     # model = MPRNet()
     f.write(f'{base_size}')
     # model = fftformer(dim=48, num_blocks=[6, 6, 12], num_refinement_blocks=4, ffn_expansion_factor=3, bias=False).eval().cuda()
@@ -328,7 +344,9 @@ if __name__ == '__main__':
     print("PyTorch Version: ", torch.__version__)
     print("Torchvision Version: ", torchvision.__version__)
     parse = argparse.ArgumentParser()
-    parse.add_argument('--weights', type=str, default="/mnt/q/deblur_ablation_exp/MAWNet-withloss-RealBlur_J-width32-4gpus/net_g_102000.pth",
+    # /mnt/q/deblur_ablation_exp/MAWNet-512p1-withloss-RealBlur_J-width32-4gpus/models/net_g_102000.pth
+    # /mnt/q/deblur_ablation_exp/V100_01/experiments/MAWNet-512p3-GoPro-width64-8batch/models/net_g_7000.pth
+    parse.add_argument('--weights', type=str, default="realblur_j.pth",
                        help='pretrained weights')
     parse.add_argument('--cfg', type=str, default="fptd")
     # parse.add_argument('--dir', type=str,

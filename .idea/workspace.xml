@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="" />
+    <list default="true" id="3e094b4f-a00f-4a3a-b48f-43279db26967" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/MLWNet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MLWNet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basicsr/metrics/psnr_ssim.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/metrics/psnr_ssim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basicsr/models/archs/MLWNet_arch.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/models/archs/MLWNet_arch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basicsr/models/archs/wavelet_block.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/models/archs/wavelet_block.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basicsr/utils/create_lmdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/utils/create_lmdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basicsr/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/basicsr/version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluate_realblur.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluate_realblur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/train/RealBlur_J/MLWNet-S.yml" beforeDir="false" afterPath="$PROJECT_DIR$/options/train/RealBlur_J/MLWNet-S.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/train/RealBlur_R/MLWNet-S.yml" beforeDir="false" afterPath="$PROJECT_DIR$/options/train/RealBlur_R/MLWNet-S.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/train.sh" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,11 +43,6 @@
       </map>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/Documents/WeChat Files/wxid_y2u6dtqaqo7822/FileStorage/File/2023-08/base_model.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/Documents/WeChat Files/wxid_y2u6dtqaqo7822/FileStorage/File/2023-08/fpn_arch.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/Documents/WeChat Files/wxid_y2u6dtqaqo7822/FileStorage/File/2023-08/image_restoration_model.py" root0="SKIP_INSPECTION" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -41,33 +51,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;Q:/MLWNet&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "last_opened_file_path": "Q:/MLWNet_paper/MLWNet",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Q:\MLWNet_paper\MLWNet" />
       <recent name="Q:\NAFNet-main\basicsr\utils" />
       <recent name="Q:\NAFNet-main\options\train\RealBlur_R" />
       <recent name="Q:\NAFNet-main\options\train\RealBlur_J" />
       <recent name="Q:\NAFNet-main" />
-      <recent name="D:\NAFNet-main\datasets\RSBlur" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\NAFNet-main\basicsr" />
@@ -299,6 +309,7 @@
       <workItem from="1701011314179" duration="2715000" />
       <workItem from="1701014125650" duration="2766000" />
       <workItem from="1701054579007" duration="505000" />
+      <workItem from="1710335665484" duration="10598000" />
     </task>
     <servers />
   </component>

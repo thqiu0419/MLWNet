@@ -171,6 +171,19 @@ def create_lmdb_for_RealBlurR():
     img_path_list, keys = prepare_keys(folder_path, 'png')
     make_lmdb_from_imgs(folder_path, lmdb_path, img_path_list, keys)
 
+def create_lmdb_for_Adobe():
+    folder_path = './datasets/adobe/train/blur_crops'
+    lmdb_path = './datasets/adobe/train/blur_crops.lmdb'
+
+    img_path_list, keys = prepare_keys(folder_path, 'png')
+    make_lmdb_from_imgs(folder_path, lmdb_path, img_path_list, keys)
+
+    folder_path = './datasets/adobe/train/sharp_crops'
+    lmdb_path = './datasets/adobe/train/sharp_crops.lmdb'
+
+    img_path_list, keys = prepare_keys(folder_path, 'png')
+    make_lmdb_from_imgs(folder_path, lmdb_path, img_path_list, keys)
+
 def create_lmdb_for_test(root_path, name, sub_name=None, phase='test'):
     sub_name = sub_name + '/' if sub_name is not None else ""
     folder_path = f'{root_path}/{name}/{sub_name}{phase}/input'

@@ -1,7 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# @Time    : 18/04/2023 1:10 am
+# @Author  : Tianheng Qiu
+# @FileName: MLWNet_arch.py
+# @Software: PyCharm
+import math
 import torch
 import torch.nn as nn
 
 import numbers
+
+from torch.nn import init
 
 from basicsr.models.archs.arch_util import LayerNorm2d
 from einops import rearrange
@@ -15,19 +24,13 @@ from basicsr.models.archs.wavelet_block import LWN
 
 
 
-
-class SimpleGate(nn.Module):
-    def forward(self, x):
-        x1, x2 = x.chunk(2, dim=1)
-        return x1 * x2
-
-
 class WaveletBlock(nn.Module):
     def __init__(self, c, DW_Expand=2, FFN_Expand=2, drop_out_rate=0.):
         super().__init__()
         dw_channel = c * DW_Expand
         self.wavelet_block1 = LWN(c, wavelet='haar', initialize=True)
-        self.conv1 = nn.Conv2d(in_channels=dw_channel // 2, out_channels=c, kernel_size=1, padding=0, stride=1,
+        # self.wavelet_block1 = FFT2(c)
+        self.conv3 = nn.Conv2d(in_channels=dw_channel // 2, out_channels=c, kernel_size=1, padding=0, stride=1,
                                groups=1, bias=True)
 
         self.sca = nn.Sequential(
@@ -37,9 +40,9 @@ class WaveletBlock(nn.Module):
         )
 
         ffn_channel = FFN_Expand * c
-        self.conv2 = nn.Conv2d(in_channels=c, out_channels=ffn_channel, kernel_size=1, padding=0, stride=1, groups=1,
+        self.conv4 = nn.Conv2d(in_channels=c, out_channels=ffn_channel, kernel_size=1, padding=0, stride=1, groups=1,
                                bias=True)
-        self.conv3 = nn.Conv2d(in_channels=ffn_channel // 2, out_channels=c, kernel_size=1, padding=0, stride=1,
+        self.conv5 = nn.Conv2d(in_channels=ffn_channel // 2, out_channels=c, kernel_size=1, padding=0, stride=1,
                                groups=1, bias=True)
         self.norm1 = LayerNorm2d(c)
         self.norm2 = LayerNorm2d(c)
@@ -55,25 +58,24 @@ class WaveletBlock(nn.Module):
 
         x = x * self.sca(x)
 
-        x = self.conv1(x)
+        x = self.conv3(x)
 
         x = self.dropout1(x)
 
         y = inp + x * self.beta
 
         x = self.norm2(y)
-        x = self.conv2(x)
+        x = self.conv4(x)
         # gate
         x1, x2 = x.chunk(2, dim=1)
         x = x1 * x2
-        x = self.conv3(x)
+        x = self.conv5(x)
         x = self.dropout2(x)
 
         return y + x * self.gamma
 
     def get_wavelet_loss(self):
         return self.wavelet_block1.get_wavelet_loss()
-            # + self.wavelet_block2.get_wavelet_loss()
 
 
 # SEB
@@ -141,6 +143,12 @@ class NAFBlock(nn.Module):
     def get_wavelet_loss(self):
         return 0.
 
+
+class SimpleGate(nn.Module):
+    def forward(self, x):
+        x1, x2 = x.chunk(2, dim=1)
+        return x1 * x2
+
 class Encoder(nn.Module):
     def __init__(self,
                  inp_channels=3,
@@ -187,25 +195,12 @@ class Fusion(nn.Module):
             nn.Conv2d(dim * 2 ** 3, dim * 2 ** 4, 1, bias=False),
             nn.PixelShuffle(2)
         )
-        # self.d3_conv = nn.Sequential(nn.Conv2d(int(dim * 2 ** 3), int(dim * 2 ** 2), 1),
-        #                              # nn.Conv2d(int(dim * 2 ** 2), int(dim * 2 ** 2), 1),
-        #                              # nn.BatchNorm2d(dim * 2 ** 2),
-        #                              # nn.GELU()
-        #                              )
-        self.d4 = nn.Sequential()
         self.d3 = nn.Sequential(*[WaveletBlock(dim * 2 ** 2) for _ in range(num_blocks[2])])
-
         self.up32 = nn.Sequential(
             nn.Conv2d(dim * 2 ** 2, dim * 2 ** 3, 1, bias=False),
             nn.PixelShuffle(2)
         )
-        # self.d2_conv = nn.Sequential(nn.Conv2d(int(dim * 2 ** 2), int(dim * 2 ** 1), 1),
-        #                              # nn.Conv2d(int(dim * 2 ** 2), int(dim * 2 ** 2), 1),
-        #                              # nn.BatchNorm2d(dim * 2 ** 1),
-        #                              # nn.GELU()
-        #                              )
         self.d2 = nn.Sequential(*[WaveletBlock(dim * 2) for _ in range(num_blocks[1])])
-        self.d1 = nn.Sequential()
 
     def forward(self, x4, x3, x2, x1):
         x3_b = x3.contiguous()
@@ -240,7 +235,6 @@ class Deblur_head(nn.Module):
 
     def forward(self, x):
         x = self.block(x)
-        # print(x.shape)
         return x
 
 
@@ -270,10 +264,7 @@ class Decoder(nn.Module):
         )
 
         self.head1 = Deblur_head(dim, dim, out_channels)
-        # self.skip4 = torch.nn.Parameter(torch.ones((1, dim * 2**3, 1, 1)), requires_grad=True)
-        # self.skip3 = torch.nn.Parameter(torch.ones((1, dim * 2**2, 1, 1)), requires_grad=True)
-        # self.skip2 = torch.nn.Parameter(torch.ones((1, dim * 2**1, 1, 1)), requires_grad=True)
-        # self.skip1 = torch.nn.Parameter(torch.ones((1, dim, 1, 1)), requires_grad=True)
+
         self.d4 = nn.Sequential(*[WaveletBlock(dim * 2 ** 3) for _ in range(num_blocks[3])])
         self.d3 = nn.Sequential(*[WaveletBlock(dim * 2 ** 2) for _ in range(num_blocks[2])])
         self.d2 = nn.Sequential(*[WaveletBlock(dim * 2) for _ in range(num_blocks[1])])
@@ -285,24 +276,20 @@ class Decoder(nn.Module):
     def forward(self, x4, x3, x3_b, x2, x2_b, x1):
         # x = x4.contiguous()
         x = self.d4(x4)
-        x4 = self.head4(x)
+        x4 = self.head4(x) if self.training else None
 
         x = self.up43(x) + x3
         x = self.d3(x)
-        x3 = self.head3(x)
+        x3 = self.head3(x) if self.training else None
 
         x2_n = x2.contiguous()
         x = self.up32(x) + x2
         x = self.d2(x)
-        x2 = self.head2(x)
+        x2 = self.head2(x) if self.training else None
 
-        # x = self.d1_conv(torch.cat([self.up21(x2_n), self.up20(x)], 1))
         x = self.up21(x + x2_n * self.alpha) + x1
-        # x = self.d0_conv(torch.cat([self.up20(x2_n), x], 1))
         x = self.d1(x)
-        # x1_ori = x1.contiguous()
         x1 = self.head1(x)
-        # x1 = x1 + x1_ori
 
         return x1, x2, x3, x4
 
@@ -342,7 +329,7 @@ class MLWNet(nn.Module):
     def forward(self, inp):
         x = self.encoder(inp)  # (1, 128, 64, 64), (1, 64, 128, 128), (1, 32, 256, 256)
         x = self.fusion(*x)  # (1, 128, 64, 64), (1, 64, 128, 128), (1, 32, 256, 256)
-        x1, x2, x3, x4 = self.decoder(*x)  # ()
+        x1, x2, x3, x4 = self.decoder(*x)
         return x1 + inp, x2, x3, x4
 
     def get_wavelet_loss(self):
@@ -370,7 +357,7 @@ if __name__ == '__main__':
     model = MLWNet().eval().cuda()
     with torch.no_grad():
         a = model(img)
-    print(model.get_wavelet_loss())
+    # print(model.get_wavelet_loss())
     print(a[0].shape)
     exit(-1)
 
