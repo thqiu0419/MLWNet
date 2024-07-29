@@ -36,3 +36,24 @@ python eval.py --weights your_weights --dir your_dataset --device your_device
 ```
 
 ### 5.Other
+#### Pretrained models
+
+--------------------
+GOPRO
+
+width_64 [Google Driver link](https://drive.google.com/file/d/15SjPtkfQ0m6NuVss0rwvscatKwRZ2l4i/view?usp=drive_link): https://drive.google.com/file/d/15SjPtkfQ0m6NuVss0rwvscatKwRZ2l4i/view?usp=drive_link
+
+----------
+
+RealBlur-J
+
+width32 [Google Driver link](https://drive.google.com/file/d/1WYhczcWj9vPn-C3fCfLk5Tq0GkD3ylY3/view?usp=drive_link): https://drive.google.com/file/d/1WYhczcWj9vPn-C3fCfLk5Tq0GkD3ylY3/view?usp=drive_link
+
+
+width64 [Google Driver link](https://drive.google.com/file/d/1lv3MCJgZUWgITUFNvgY8nU9YlpgE050W/view?usp=drive_link): https://drive.google.com/file/d/1lv3MCJgZUWgITUFNvgY8nU9YlpgE050W/view?usp=drive_link
+
+----------
+
+RealBlur-R
+
+width64 [Google Driver link](https://drive.google.com/file/d/1hp4Qu2n_lOmc7LsSOHYjf4NhUzZtskGP/view?usp=drive_link): https://drive.google.com/file/d/1hp4Qu2n_lOmc7LsSOHYjf4NhUzZtskGP/view?usp=drive_link
