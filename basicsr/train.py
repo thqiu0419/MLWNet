@@ -155,7 +155,7 @@ def main():
     import os
     try:
         states = os.listdir(state_folder_path)
-    except:
+    except OSError:
         states = []
 
     resume_state = None
